@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-13T09:25:10.965020",
+  "total_tests": 8,
+  "passed_tests": 7,
+  "failed_tests": 1,
+  "success_rate": 87.5,
+  "detailed_results": {
+    "API Clients": "PASSED",
+    "Screening Engine": "PASSED",
+    "ML Analysis": "PASSED",
+    "Backtesting Engine": "PASSED",
+    "AI Agent": "PASSED",
+    "Streamlit Integration": "ERROR: cannot import name 'initialize_components' from 'utils' (/home/ubuntu/kangro-capital/utils/__init__.py)",
+    "Data Persistence": "PASSED",
+    "Error Handling": "PASSED"
+  }
+}
