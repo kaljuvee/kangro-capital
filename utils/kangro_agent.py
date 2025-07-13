@@ -27,6 +27,9 @@ class KangroAgent:
         self.tavily_api_key = os.getenv('TAVILY_API_KEY')
         self.openai_base_url = os.getenv('OPENAI_API_BASE', 'https://api.openai.com/v1')
         
+        # Use supported model
+        self.model = "gpt-4.1-mini"
+        
         if not self.openai_api_key:
             logger.warning("OpenAI API key not found. Agent functionality will be limited.")
         
@@ -44,7 +47,7 @@ class KangroAgent:
             # Prepare the prompt
             prompt = self._create_fundamental_analysis_prompt(stock_data)
             
-            # Call OpenAI API
+            # Call OpenAI API with supported model
             response = self._call_openai_api(prompt, max_tokens=500)
             
             if response:
@@ -153,7 +156,7 @@ class KangroAgent:
     
     def _call_openai_api(self, prompt: str, max_tokens: int = 500) -> Optional[str]:
         """
-        Call OpenAI API directly
+        Call OpenAI API directly with supported model
         """
         try:
             headers = {
@@ -162,7 +165,7 @@ class KangroAgent:
             }
             
             data = {
-                'model': 'gpt-3.5-turbo',
+                'model': self.model,  # Use the supported model
                 'messages': [
                     {
                         'role': 'system',
