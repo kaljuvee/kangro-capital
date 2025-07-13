@@ -1,5 +1,6 @@
 streamlit
 pandas
+numpy
 plotly
 requests
 python-dotenv
@@ -9,4 +10,13 @@ langchain-openai
 openai
 tavily-python
 langgraph
+scikit-learn
+scipy
+matplotlib
+seaborn
+statsmodels
+openpyxl
+xlsxwriter
+polygon-api-client
+python-dateutil
 
