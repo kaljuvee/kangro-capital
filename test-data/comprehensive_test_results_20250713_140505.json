@@ -1,0 +1,192 @@
+{
+  "framework_info": {
+    "version": "1.0.0",
+    "test_date": "2025-07-13T14:05:04.402695",
+    "framework_name": "Kangro Capital Comprehensive Testing Framework"
+  },
+  "test_summary": {
+    "total_tests_run": 19,
+    "total_tests_passed": 15,
+    "success_rate": "78.9%",
+    "test_duration": "0:00:01.365476",
+    "test_categories": 6,
+    "errors_encountered": 0,
+    "overall_status": "PASSED",
+    "framework_version": "1.0.0"
+  },
+  "component_tests": {
+    "core_functionality": {
+      "test_name": "Core Functionality Tests",
+      "tests_run": 4,
+      "tests_passed": 1,
+      "test_details": {
+        "module_imports": {
+          "status": "FAILED",
+          "error": "numpy.core.multiarray failed to import"
+        },
+        "class_instantiation": {
+          "status": "FAILED",
+          "error": "cannot access local variable 'AdvancedBacktester' where it is not associated with a value"
+        },
+        "method_availability": {
+          "status": "FAILED",
+          "error": "cannot access local variable 'advanced_backtester' where it is not associated with a value"
+        },
+        "configuration_validation": {
+          "status": "PASSED",
+          "config_checks_passed": 3
+        }
+      }
+    },
+    "data_handling": {
+      "test_name": "Data Handling Tests",
+      "tests_run": 3,
+      "tests_passed": 3,
+      "test_details": {
+        "synthetic_data_generation": {
+          "status": "PASSED",
+          "stocks_generated": 5,
+          "data_points_per_stock": 731
+        },
+        "data_validation": {
+          "status": "PASSED",
+          "validation_checks_passed": 15
+        },
+        "data_preprocessing": {
+          "status": "PASSED",
+          "operations_tested": [
+            "return_calculation"
+          ]
+        }
+      }
+    },
+    "calculation_accuracy": {
+      "test_name": "Calculation Accuracy Tests",
+      "tests_run": 3,
+      "tests_passed": 3,
+      "test_details": {
+        "statistical_calculations": {
+          "status": "PASSED",
+          "mean_return": 0.006,
+          "volatility": 0.01854723699099141,
+          "sharpe_ratio": 0.3234983196103152
+        },
+        "portfolio_weights": {
+          "status": "PASSED",
+          "weight_sum": 1.0,
+          "individual_weight": 0.2
+        },
+        "risk_metrics": {
+          "status": "PASSED",
+          "max_drawdown": -0.06,
+          "calculation_method": "running_maximum"
+        }
+      }
+    },
+    "error_handling": {
+      "test_name": "Error Handling Tests",
+      "tests_run": 3,
+      "tests_passed": 3,
+      "test_details": {
+        "empty_data_handling": {
+          "status": "PASSED",
+          "result_type": "dict"
+        },
+        "invalid_input_handling": {
+          "status": "PASSED",
+          "inputs_handled": 4,
+          "total_inputs": 4
+        },
+        "memory_handling": {
+          "status": "PASSED",
+          "large_data_size": 1000,
+          "processing_completed": true
+        }
+      }
+    },
+    "performance_benchmarks": {
+      "test_name": "Performance Benchmark Tests",
+      "tests_run": 3,
+      "tests_passed": 2,
+      "test_details": {
+        "processing_speed": {
+          "status": "PASSED",
+          "processing_time_seconds": 0.003183,
+          "threshold_seconds": 10
+        },
+        "memory_efficiency": {
+          "status": "SKIPPED",
+          "reason": "psutil not available"
+        },
+        "scalability": {
+          "status": "PASSED",
+          "time_ratio": 7.153846153846154,
+          "size_ratio": 10.0,
+          "scalability_results": [
+            {
+              "size": 10,
+              "time": 1.3e-05
+            },
+            {
+              "size": 50,
+              "time": 3.8e-05
+            },
+            {
+              "size": 100,
+              "time": 9.3e-05
+            }
+          ]
+        }
+      }
+    },
+    "integration_workflow": {
+      "test_name": "Integration Workflow Tests",
+      "tests_run": 3,
+      "tests_passed": 3,
+      "test_details": {
+        "workflow_simulation": {
+          "status": "PASSED",
+          "completed_steps": [
+            "data_preparation",
+            "portfolio_optimization",
+            "backtesting",
+            "performance_analysis",
+            "report_generation"
+          ],
+          "total_steps": [
+            "data_preparation",
+            "portfolio_optimization",
+            "backtesting",
+            "performance_analysis",
+            "report_generation"
+          ],
+          "completion_rate": 1.0
+        },
+        "component_interaction": {
+          "status": "PASSED",
+          "interactions_tested": 3,
+          "total_interactions": 3
+        },
+        "configuration_consistency": {
+          "status": "PASSED",
+          "checks_passed": 4,
+          "total_checks": 4
+        }
+      }
+    }
+  },
+  "integration_tests": {},
+  "performance_benchmarks": {
+    "data_processing": "Under 10 seconds for standard dataset",
+    "memory_usage": "Under 100MB increase during processing",
+    "scalability": "Linear scaling with data size",
+    "error_handling": "Graceful handling of invalid inputs",
+    "integration": "Seamless component interaction"
+  },
+  "recommendations": [
+    "Acceptable test performance. Address failing tests before deployment.",
+    "Improve core functionality - success rate below 70%",
+    "Improve performance benchmarks - success rate below 70%"
+  ],
+  "error_log": []
+}

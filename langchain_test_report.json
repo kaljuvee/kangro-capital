@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-07-13T12:40:58.056755",
+  "total_tests": 8,
+  "passed_tests": 3,
+  "success_rate": 37.5,
+  "test_results": {
+    "Environment Setup": true,
+    "LangChain Imports": true,
+    "OpenAI Connection": false,
+    "Tavily Integration": true,
+    "Kangro Agent": false,
+    "LangChain Tools": false,
+    "Investment Strategy": false,
+    "Market Sentiment": false
+  }
+}

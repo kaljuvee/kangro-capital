@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-13T12:41:49.563992",
+  "total_tests": 5,
+  "passed_tests": 4,
+  "success_rate": 80.0,
+  "test_results": {
+    "OpenAI Supported Models": true,
+    "Investment Strategy": true,
+    "Market Sentiment": true,
+    "Stock Analysis Agent": true,
+    "Kangro Agent": false
+  },
+  "supported_models": [
+    "gpt-4.1-mini",
+    "gpt-4.1-nano"
+  ],
+  "notes": "Fixed test using supported models only"
+}
