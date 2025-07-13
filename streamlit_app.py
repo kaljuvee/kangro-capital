@@ -71,7 +71,7 @@ def get_stock_data(symbol, period="1y"):
         st.error(f"Error fetching data for {symbol}: {str(e)}")
         return None, None
 
-def calculate_basic_metrics(data, info):
+def calculate_basic_metrics(data, info, symbol='UNKNOWN'):
     """Calculate basic stock metrics"""
     if data is None or data.empty:
         return {}
@@ -258,7 +258,7 @@ def screen_stocks(symbols, criteria):
         
         data, info = get_stock_data(symbol, period="1y")
         if data is not None and not data.empty:
-            metrics = calculate_basic_metrics(data, info)
+            metrics = calculate_basic_metrics(data, info, symbol)
             
             # Apply screening criteria
             score = 0
@@ -430,7 +430,7 @@ def show_dashboard():
         st.subheader(f"📈 Quick Analysis: {st.session_state.analysis_symbol}")
         data, info = get_stock_data(st.session_state.analysis_symbol)
         if data is not None:
-            metrics = calculate_basic_metrics(data, info)
+            metrics = calculate_basic_metrics(data, info, st.session_state.analysis_symbol)
             
             col1, col2, col3 = st.columns(3)
             with col1:
@@ -513,7 +513,7 @@ def show_stock_analysis():
             data, info = get_stock_data(symbol, period)
         
         if data is not None and not data.empty:
-            metrics = calculate_basic_metrics(data, info)
+            metrics = calculate_basic_metrics(data, info, symbol)
             
             # Display company info
             st.subheader(f"📊 {metrics.get('company_name', symbol)} ({symbol})")
@@ -828,8 +828,8 @@ def show_ai_insights():
                 data2, info2 = get_stock_data(stock2)
                 
                 if data1 is not None and data2 is not None:
-                    metrics1 = calculate_basic_metrics(data1, info1)
-                    metrics2 = calculate_basic_metrics(data2, info2)
+                    metrics1 = calculate_basic_metrics(data1, info1, stock1)
+                    metrics2 = calculate_basic_metrics(data2, info2, stock2)
                     
                     prompt = f"""
                     Compare these two stocks for investment:
@@ -961,7 +961,7 @@ def show_portfolio_analysis():
                     for symbol, weight in portfolio.items():
                         data, info = get_stock_data(symbol)
                         if data is not None:
-                            metrics = calculate_basic_metrics(data, info)
+                            metrics = calculate_basic_metrics(data, info, symbol)
                             portfolio_data.append({
                                 'symbol': symbol,
                                 'weight': weight,
@@ -1004,7 +1004,7 @@ def show_portfolio_analysis():
                 with st.expander(f"{symbol} ({weight*100:.1f}% allocation)"):
                     data, info = get_stock_data(symbol, period="1y")
                     if data is not None:
-                        metrics = calculate_basic_metrics(data, info)
+                        metrics = calculate_basic_metrics(data, info, symbol)
                         
                         col1, col2, col3 = st.columns(3)
                         with col1:
