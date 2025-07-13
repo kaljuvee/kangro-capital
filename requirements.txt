@@ -4,4 +4,9 @@ plotly
 requests
 python-dotenv
 yfinance
+langchain
+langchain-openai
+openai
+tavily-python
+langgraph
 
